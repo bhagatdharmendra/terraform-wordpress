@@ -18,7 +18,7 @@ resource "aws_subnet" "subnet-1" {
   cidr_block = "192.168.0.0/24"
   availability_zone = "ap-south-1a"
   tags = {
-    Name = "public-vpc"
+    Name = "public-sonu-vpc-subnet"
   }
 }
 
@@ -27,7 +27,7 @@ resource "aws_subnet" "subnet-2" {
   cidr_block = "192.168.1.0/24"
   availability_zone = "ap-south-1b"
   tags = {
-    Name = "private-vpc"
+    Name = "private-sonu-vpc-subnet"
   }
 }
 ######### public SG
@@ -59,7 +59,7 @@ resource "aws_security_group" "allow_tls" {
   }
 
   tags = {
-    Name = "public_sonu_vpc"
+    Name = "public_sonu_vpc_SG"
   }
 }
 ######### private SG
@@ -98,7 +98,7 @@ resource "aws_security_group" "allow_tls2" {
   }
 
   tags = {
-    Name = "private_sonu_vpc"
+    Name = "private_sonu_vpc_SG"
   }
   
 }
@@ -154,7 +154,7 @@ resource "aws_instance" "instance1" {
   
   
   tags = {
-    Name = "wordpress"
+    Name = "wordpress-public"
   }
  
 }
@@ -174,7 +174,7 @@ resource "aws_instance" "instance2" {
    
   
   tags = {
-    Name = "mysql-server"
+    Name = "mysql-server-private"
   }
  
 }
